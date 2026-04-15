@@ -1,0 +1,269 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 270 25% 6%;
+    --foreground: 40 20% 92%;
+
+    --card: 270 20% 11%;
+    --card-foreground: 40 20% 92%;
+
+    --popover: 270 20% 11%;
+    --popover-foreground: 40 20% 92%;
+
+    --primary: 275 50% 68%;
+    --primary-foreground: 270 25% 6%;
+
+    --secondary: 340 45% 72%;
+    --secondary-foreground: 270 25% 6%;
+
+    --muted: 270 15% 16%;
+    --muted-foreground: 270 12% 52%;
+
+    --accent: 25 60% 70%;
+    --accent-foreground: 270 25% 6%;
+
+    --destructive: 0 62.8% 50%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 270 12% 18%;
+    --input: 270 12% 18%;
+    --ring: 275 50% 68%;
+
+    --radius: 1rem;
+
+    --glow-lavender: 275 50% 68%;
+    --glow-pink: 340 45% 72%;
+    --glow-peach: 25 60% 70%;
+
+    --sidebar-background: 270 20% 9%;
+    --sidebar-foreground: 40 20% 92%;
+    --sidebar-primary: 275 50% 68%;
+    --sidebar-primary-foreground: 270 25% 6%;
+    --sidebar-accent: 270 15% 16%;
+    --sidebar-accent-foreground: 40 20% 92%;
+    --sidebar-border: 270 12% 18%;
+    --sidebar-ring: 275 50% 68%;
+  }
+
+  .theme-soft {
+    --background: 30 30% 96%;
+    --foreground: 270 20% 15%;
+
+    --card: 30 25% 92%;
+    --card-foreground: 270 20% 15%;
+
+    --popover: 30 25% 92%;
+    --popover-foreground: 270 20% 15%;
+
+    --primary: 275 45% 58%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 340 40% 65%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 270 10% 85%;
+    --muted-foreground: 270 10% 40%;
+
+    --accent: 25 55% 65%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 50%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 270 10% 82%;
+    --input: 270 10% 82%;
+    --ring: 275 45% 58%;
+
+    --glow-lavender: 275 45% 58%;
+    --glow-pink: 340 40% 65%;
+    --glow-peach: 25 55% 65%;
+
+    --sidebar-background: 30 25% 94%;
+    --sidebar-foreground: 270 20% 15%;
+    --sidebar-primary: 275 45% 58%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 270 10% 85%;
+    --sidebar-accent-foreground: 270 20% 15%;
+    --sidebar-border: 270 10% 82%;
+    --sidebar-ring: 275 45% 58%;
+  }
+
+  .theme-lavender {
+    --background: 265 30% 8%;
+    --foreground: 260 20% 90%;
+
+    --card: 265 25% 13%;
+    --card-foreground: 260 20% 90%;
+
+    --popover: 265 25% 13%;
+    --popover-foreground: 260 20% 90%;
+
+    --primary: 265 60% 70%;
+    --primary-foreground: 265 30% 8%;
+
+    --secondary: 290 50% 72%;
+    --secondary-foreground: 265 30% 8%;
+
+    --muted: 265 15% 18%;
+    --muted-foreground: 265 12% 55%;
+
+    --accent: 300 40% 68%;
+    --accent-foreground: 265 30% 8%;
+
+    --destructive: 0 62.8% 50%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 265 12% 20%;
+    --input: 265 12% 20%;
+    --ring: 265 60% 70%;
+
+    --glow-lavender: 265 60% 70%;
+    --glow-pink: 290 50% 72%;
+    --glow-peach: 300 40% 68%;
+
+    --sidebar-background: 265 25% 10%;
+    --sidebar-foreground: 260 20% 90%;
+    --sidebar-primary: 265 60% 70%;
+    --sidebar-primary-foreground: 265 30% 8%;
+    --sidebar-accent: 265 15% 18%;
+    --sidebar-accent-foreground: 260 20% 90%;
+    --sidebar-border: 265 12% 20%;
+    --sidebar-ring: 265 60% 70%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-card/30 backdrop-blur-xl border border-border/20;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
+  }
+
+  .glass-strong {
+    @apply bg-card/50 backdrop-blur-2xl border border-border/30;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2);
+  }
+
+  .glow-border {
+    box-shadow: 0 0 20px -4px hsl(var(--glow-lavender) / 0.25),
+                0 0 40px -8px hsl(var(--glow-pink) / 0.15),
+                0 0 60px -12px hsl(var(--glow-peach) / 0.08);
+  }
+
+  .glow-text {
+    text-shadow: 0 0 30px hsl(var(--glow-lavender) / 0.4),
+                 0 0 60px hsl(var(--glow-pink) / 0.15);
+  }
+
+  .font-display {
+    font-family: 'Cormorant Garamond', serif;
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(
+      135deg,
+      hsl(var(--glow-lavender)) 0%,
+      hsl(var(--glow-pink)) 50%,
+      hsl(var(--glow-peach)) 100%
+    );
+  }
+
+  .gradient-border {
+    position: relative;
+  }
+
+  .gradient-border::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(
+      135deg,
+      hsl(var(--glow-lavender) / 0.4),
+      hsl(var(--glow-pink) / 0.3),
+      hsl(var(--glow-peach) / 0.2)
+    );
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+}
+.theme-soft {
+  --background: 340 40% 96%;
+  --foreground: 250 20% 20%;
+
+  --card: 0 0% 100%;
+  --card-foreground: 250 20% 20%;
+
+  --primary: 320 60% 65%;
+  --secondary: 340 30% 90%;
+
+  --muted: 340 20% 92%;
+  --border: 340 20% 85%;
+}
+/* FLOATING ANIMATION */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-25px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* GLOW PULSE */
+@keyframes pulseGlow {
+  0%,100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 4s ease-in-out infinite;
+}
+
+/* CURSOR GLOW */
+.cursor-glow {
+  position: fixed;
+  width: 180px;
+  height: 180px;
+  background: radial-gradient(circle, rgba(255,255,255,0.15), transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+}
+
+/* TYPING TEXT */
+.typing {
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid;
+  width: 0;
+  animation: typing 3s steps(30, end) forwards, blink 0.8s infinite;
+}
+
+@keyframes typing {
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
